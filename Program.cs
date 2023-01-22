@@ -17,10 +17,30 @@ namespace Client
         static void StartClient()
         {
             var tcpClient = new TcpClient();
-            tcpClient.Connect(IPAddress.Parse("192.168.0.3"), 8888);
+            tcpClient.Connect(IPAddress.Parse("192.168.0.3"), 8000);
 
             // слова для отправки для получения перевода
-            var words = new string[] { "red", "yellow", "blue" };
+            var words = new string[] {
+                "Проверить элементы",
+                "Разблокировать решатель",
+                "Разблокировать пре/пост процессор",
+                "Разблокировать пре/пост процессор",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "dfrfdg5645645645645",
+                "Проверить элементы"
+            };
             // получаем NetworkStream для взаимодействия с сервером
             var stream = tcpClient.GetStream();
 
@@ -50,6 +70,7 @@ namespace Client
             var finish = Encoding.UTF8.GetBytes("END\n");
             stream.Write(finish, 0, finish.Length);
             Console.WriteLine("Все сообщения отправлены");
+
         }
     }
 }
